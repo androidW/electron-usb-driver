@@ -4,6 +4,11 @@
   "description": "Cross-platform driver for USB device metadata and events",
   "main": "./src/usb-driver.js",
   "scripts": {
+    "install": "node-pre-gyp install --fallback-to-build",
+    "release-win-ia32": "node-pre-gyp rebuild --target_arch=ia32 --target_platform=win32 --runtime=electron --target=0.36.7 && node-pre-gyp package --target_arch=ia32 --target_platform=win32 --runtime=electron --target=0.36.7 && node-pre-gyp-github publish --release",
+    "release-win": "node-pre-gyp rebuild --target_arch=x64 --target_platform=win32 --runtime=electron --target=0.36.7 && node-pre-gyp package --target_arch=x64 --target_platform=win32 --runtime=electron --target=0.36.7 && node-pre-gyp-github publish --release",
+    "release": "node-pre-gyp rebuild --runtime=electron --target=0.36.7 && node-pre-gyp package --runtime=electron --target=0.36.7 && node-pre-gyp-github publish --release",
+    "release-darwin": "HOME=~/.electron-gyp node-pre-gyp rebuild --target_platform=darwin --runtime=electron --target=0.36.7 --arch=x64 --dist-url=https://atom.io/download/atom-shell && node-pre-gyp package --target_platform=darwin --runtime=electron --target=0.36.7 && node-pre-gyp-github publish —release",
     "test": "./node_modules/.bin/mocha"
   },
   "repository": {
