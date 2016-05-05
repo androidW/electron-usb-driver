@@ -1,4 +1,4 @@
-# USB Driver
+# Electron USB Driver
 
 Cross-platform USB device metadata and events.
 
