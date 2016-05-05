@@ -15,13 +15,13 @@ Cross-platform USB device metadata and events.
 ## Install
 
 ```
-npm install usb-driver
+npm install electron-usb-driver
 ```
 
 ## Usage
 
 ```js
-var usbDriver = require('usb-driver');
+var usbDriver = require('electron-usb-driver');
 ```
 
 ### Functions returning promises
